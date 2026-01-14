@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiwie - Spotify Rijpt Nog</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥝</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-container {
+            padding-top: 5vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .temp-logo-wrapper {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .temp-logo {
+            max-width: 250px;
+            height: auto;
+        }
+
+        .error-message {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            padding: 0 10px;
+            color: var(--text-color);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .back-button:hover {
+            transform: scale(1.05);
+            background-color: #76813d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container error-container">
+
+        <div class="temp-logo-wrapper">
+            <img src="img/TijdelijkLogo.png" alt="Quiwie Tijdelijk Logo" class="temp-logo">
+        </div>
+
+        <h1 class="band-name">Nog even geduld!</h1>
+
+        <div class="error-message">
+            <p>Onze excuses voor de radiostilte op Spotify.</p>
+            <p>We leggen de laatste hand aan
+                de mix zodat jullie binnenkort optimaal van ons gejengel kunnen genieten.</p>
+        </div>
+
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Ik wil terug
+        </a>
+
+    </div>
+
+</body>
+
+</html>
