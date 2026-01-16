@@ -1,0 +1,14 @@
+---
+const { href, icon, imgSrc, title, color, isExternal = true } = Astro.props;
+---
+
+<a href={href} class="link-item" target={isExternal ? '_blank' : '_self'}>
+  {
+    imgSrc ? (
+      <img src={imgSrc} alt={`${title} logo`} />
+    ) : (
+      <i class={icon} style={`color: ${color};`} />
+    )
+  }
+  {title}
+</a>

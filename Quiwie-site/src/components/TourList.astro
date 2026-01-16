@@ -1,0 +1,41 @@
+---
+const tours = await Astro.glob('../content/tours/*.md');
+const sortedTours = tours.sort(
+  (a, b) =>
+    new Date(a.frontmatter.datum).getTime() -
+    new Date(b.frontmatter.datum).getTime(),
+);
+---
+
+<div class="tour-list">
+  {
+    sortedTours.map((tour) => (
+      <div class="tour-item scroll-reveal">
+        <span>
+          {new Date(tour.frontmatter.datum).toLocaleDateString('nl-BE')}
+        </span>
+        <span>{tour.frontmatter.locatie}</span>
+        <a href={tour.frontmatter.tickets} target="_blank">
+          Tickets
+        </a>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .tour-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+  .tour-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: var(--button-bg);
+    border: var(--border-style);
+    border-radius: 8px;
+  }
+</style>

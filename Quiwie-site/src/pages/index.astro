@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/layout.astro';
+import SocialLink from '../components/SocialLink.astro';
+import TourList from '../components/TourList.astro';
 ---
 
-<Layout title="Quiwie - Linktree">
+<Layout title="Quiwie">
   <div class="container">
     <div class="logo-wrapper">
       <img src="/img/TijdelijkLogo.png" alt="Quiwie Logo" class="logo" />
@@ -10,23 +12,14 @@ import Layout from '../layouts/layout.astro';
 
     <h1 class="band-name">Quiwie</h1>
 
-    <section id="tour-dates">
-      <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"
-      ></script>
-      <a
-        class="bit-widget-initializer"
-        data-artist-name="Quiwie"
-        data-display-local-dates="false"
-        data-display-past-dates="false"
-        data-display-details="false"
-        data-display-lineup="false"
-        data-display-play-my-city="false"
-        data-separator-color="rgba(124,124,124,0.35)"></a>
+    <section id="tour-dates" class="scroll-reveal">
+      <h2 class="section-title">Concerten</h2>
+      <TourList />
     </section>
 
-    <h2 class="section-title">Laatste release</h2>
+    <h2 class="section-title scroll-reveal">Laatste release</h2>
 
-    <section class="soundcloud-wrapper">
+    <section class="soundcloud-wrapper scroll-reveal">
       <iframe
         width="100%"
         height="120"
@@ -38,7 +31,8 @@ import Layout from '../layouts/layout.astro';
       <div class="sc-caption">
         <a href="https://soundcloud.com/quiwie" title="Quiwie" target="_blank"
           >Quiwie</a
-        > · <a
+        > ·
+        <a
           href="https://soundcloud.com/quiwie/waarisdietijd-demo"
           title="WaarIsDieTijd (Demo)"
           target="_blank">WaarIsDieTijd (Demo)</a
@@ -46,33 +40,46 @@ import Layout from '../layouts/layout.astro';
       </div>
     </section>
 
-    <section class="links-list">
-      <a href="/coming-soon" class="link-item">
-        <i class="fab fa-spotify" style="color: #1DB954;"></i> Spotify (Coming soon,
-        niet klikken)
-      </a>
-      <a
+    <section class="links-list scroll-reveal">
+      <SocialLink
+        href="/coming-soon"
+        icon="fab fa-spotify"
+        title="Spotify (Coming soon)"
+        color="#1DB954"
+        isExternal={false}
+      />
+      <SocialLink
         href="https://instagram.com/quiwie.band"
-        class="link-item"
-        target="_blank"
-      >
-        <i class="fab fa-instagram" style="color: #E4405F;"></i> Instagram
-      </a>
-      <a href="https://soundcloud.com/quiwie" class="link-item" target="_blank">
-        <i class="fab fa-soundcloud" style="color: #FF5500;"></i> SoundCloud
-      </a>
-      <a href="https://vi.be/platform/Quiwie" class="link-item" target="_blank">
-        <img src="https://vi.be/favicon.ico" alt="VI.BE logo" /> VI.BE
-      </a>
-      <a href="https://facebook.com/quiwie" class="link-item" target="_blank">
-        <i class="fab fa-facebook" style="color: #1877F2;"></i> Facebook
-      </a>
-      <a href="mailto:quiwieband@gmail.com" class="link-item contact-btn">
-        <i class="fas fa-envelope"></i> Boekingen & Contact
-      </a>
+        icon="fab fa-instagram"
+        title="Instagram"
+        color="#E4405F"
+      />
+      <SocialLink
+        href="https://soundcloud.com/quiwie"
+        icon="fab fa-soundcloud"
+        title="SoundCloud"
+        color="#FF5500"
+      />
+      <SocialLink
+        href="https://vi.be/platform/Quiwie"
+        imgSrc="https://vi.be/favicon.ico"
+        title="VI.BE"
+      />
+      <SocialLink
+        href="https://facebook.com/quiwie"
+        icon="fab fa-facebook"
+        title="Facebook"
+        color="#1877F2"
+      />
+      <SocialLink
+        href="mailto:quiwieband@gmail.com"
+        icon="fas fa-envelope"
+        title="Boekingen & Contact"
+        color="var(--text-color)"
+      />
     </section>
 
-    <section class="newsletter-box">
+    <section class="newsletter-box scroll-reveal">
       <form action="#" method="POST">
         <input
           type="email"
