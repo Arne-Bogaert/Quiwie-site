@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/layout.astro';
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Quiwie - Spotify Rijpt Nog">
@@ -57,7 +58,7 @@ import Layout from '../layouts/layout.astro';
   <div class="container error-container">
     <div class="temp-logo-wrapper">
       <img
-        src="/img/TijdelijkLogo.png"
+        src={`${baseUrl}/img/TijdelijkLogo.png`}
         alt="Quiwie Tijdelijk Logo"
         class="temp-logo"
       />
@@ -81,7 +82,7 @@ import Layout from '../layouts/layout.astro';
       <i class="fab fa-spotify"></i> Pre-save op Spotify
     </a>
 
-    <a href="/" class="back-button">
+    <a href={baseUrl} class="back-button">
       <i class="fas fa-arrow-left"></i> Ik wil terug
     </a>
   </div>

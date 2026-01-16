@@ -2,12 +2,18 @@
 import Layout from '../layouts/layout.astro';
 import SocialLink from '../components/SocialLink.astro';
 import TourList from '../components/TourList.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Quiwie">
   <div class="container">
     <div class="logo-wrapper">
-      <img src="/img/TijdelijkLogo.png" alt="Quiwie Logo" class="logo" />
+      <img
+        src={`${baseUrl}/img/TijdelijkLogo.png`}
+        alt="Quiwie Logo"
+        class="logo"
+      />
     </div>
 
     <h1 class="band-name">Quiwie</h1>
@@ -17,7 +23,9 @@ import TourList from '../components/TourList.astro';
       <TourList />
     </section>
 
-    <h2 class="section-title scroll-reveal">Laatste release</h2>
+    <div class="release-header scroll-reveal">
+      <h2 class="section-title">Laatste release</h2>
+    </div>
 
     <section class="soundcloud-wrapper scroll-reveal">
       <iframe
@@ -42,7 +50,7 @@ import TourList from '../components/TourList.astro';
 
     <section class="links-list scroll-reveal">
       <SocialLink
-        href="/coming-soon"
+        href={`${baseUrl}/coming-soon`}
         icon="fab fa-spotify"
         title="Spotify (Coming soon)"
         color="#1DB954"
